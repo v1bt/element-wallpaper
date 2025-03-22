@@ -60,9 +60,9 @@ with open('elements/data.json', 'r', encoding='utf-8') as file:
 
 @app.route('/')
 def index():
-    return "원소 이미지 생성 서버입니다. '/g/원소번호/너비/높이/언어' 형식으로 요청하세요."
+    return "원소 이미지 생성 서버입니다. '/g/원소번호/너비/높이/언어' 형식으로 요청하세요!"
 
-@app.route('/g/<int:atomic_number>/<int:width>/<int:height>/<string:lang>/')
+@app.route('/wallpaper/<int:atomic_number>/<int:width>/<int:height>/<string:lang>/')
 def generate_element_image_with_lang(atomic_number, width, height, lang):
     if atomic_number < 1 or atomic_number > 118:
         return "유효한 원소 번호(1-118)를 입력하세요.", 400
@@ -163,12 +163,5 @@ def create_element_image(element, width, height, lang='ko'):
 
     return img
 
-@app.route('/test')
-def test():
-    return jsonify({
-        "status": "ok",
-        "message": "서버가 정상적으로 실행 중입니다. PIL 라이브러리를 사용하지 않는 테스트 엔드포인트입니다."
-    })
-
-if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5500)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
