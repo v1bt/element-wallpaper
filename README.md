@@ -27,6 +27,7 @@ with open(image_path, 'wb') as f:
 print(f"Downloaded at: {os.path.abspath(image_path)}")
 ```
 
+## Examples
 [You can see an example here.](https://github.com/v1bt/element-wallpaper/tree/main/examples)
 
 <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/1_1179x2556.jpeg" width=auto height=350px> <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/92_2224x1668.jpeg" width=auto height=350px>
