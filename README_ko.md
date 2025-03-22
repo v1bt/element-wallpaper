@@ -1,6 +1,10 @@
 # 원소 배경화면 생성기
 \[ [English](README.md) | 한국어 \]
 
+일상생활에서 기억할 수 있는 엘리먼트 배경화면 생성기
+
+## 실행하기
+이 repo를 복사하여 실행하셔도 됩니다.
 ```python
 import requests
 import os
@@ -11,7 +15,7 @@ num = "1" # hydrogen
 width = 1179
 height = 2556
 
-lang = "en"
+lang = "en" # ko
 
 res = requests.get(f"{url}/wallpaper/{num}/{width}/{height}/{lang}")
 
@@ -20,6 +24,8 @@ image_path = f"{num}_{width}x{height}.jpeg"
 with open(image_path, 'wb') as f:
     f.write(res.content)
 
-print(f"다운로드 되었습니다: {os.path.abspath(image_path)}")
+print(f"다운로드 됨: {os.path.abspath(image_path)}")
 ```
-이 repo를 복사하여 실행하셔도 됩니다.
+
+## 예시
+<img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/1_1179x2556.jpeg" width=auto height=500px> <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/92_2224x1668.jpeg" width=auto height=500px>

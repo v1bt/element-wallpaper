@@ -1,6 +1,10 @@
 # Element Wallpaper Generator
 \[ English | [한국어](README_ko.md) \]
 
+Element wallpaper generator that can be memorized in everyday life
+
+## Run
+You can just copy and run this repo.
 ```python
 import requests
 import os
@@ -22,4 +26,6 @@ with open(image_path, 'wb') as f:
 
 print(f"Downloaded at: {os.path.abspath(image_path)}")
 ```
-You can just copy and run this repo.
+
+## Examples
+<img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/1_1179x2556.jpeg" width=auto height=500px> <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/92_2224x1668.jpeg" width=auto height=500px>
