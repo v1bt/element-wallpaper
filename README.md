@@ -15,7 +15,7 @@ lang = "en"
 
 res = requests.get(f"{url}/wallpaper/{num}/{width}/{height}/{lang}")
 
-image_path = f"wallpaper_{num}_{width}x{height}.jpeg"
+image_path = f"{num}_{width}x{height}.jpeg"
     
 with open(image_path, 'wb') as f:
     f.write(res.content)

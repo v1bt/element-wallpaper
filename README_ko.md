@@ -15,11 +15,11 @@ lang = "en"
 
 res = requests.get(f"{url}/wallpaper/{num}/{width}/{height}/{lang}")
 
-image_path = f"wallpaper_{num}_{width}x{height}.jpeg"
+image_path = f"{num}_{width}x{height}.jpeg"
     
 with open(image_path, 'wb') as f:
     f.write(res.content)
 
-print(f"Downloaded at: {os.path.abspath(image_path)}")
+print(f"다운로드 되었습니다: {os.path.abspath(image_path)}")
 ```
 이 repo를 복사하여 실행하셔도 됩니다.
