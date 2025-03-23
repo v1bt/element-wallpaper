@@ -31,3 +31,17 @@ print(f"Downloaded at: {os.path.abspath(image_path)}")
 [You can see an example here.](https://github.com/v1bt/element-wallpaper/tree/main/examples)
 
 <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/1_1179x2556.jpeg" width=auto height=350px> <img src="https://github.com/v1bt/element-wallpaper/blob/main/examples/92_2224x1668.jpeg" width=auto height=350px>
+
+## Notes
+### How to Request
+You should request it with `/wallpaper/Atomic number/Width/Height/Language`
+
+### Language List
+- Korean (ko)
+- English (en)
+
+### Width and Height
+Width and height must be positive.
+
+### Valid element number
+You must enter a valid element number (1-118).
