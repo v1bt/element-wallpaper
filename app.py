@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import json
-from flask import Flask, send_file, jsonify
+from flask import Flask, send_file, jsonify, request
 from io import BytesIO
 
 app = Flask(__name__)
@@ -60,27 +60,27 @@ with open('elements/data.json', 'r', encoding='utf-8') as file:
 
 @app.route('/')
 def index():
-    return "원소 이미지 생성 서버입니다. '/g/원소번호/너비/높이/언어' 형식으로 요청하세요!"
+    return "https://github.com/v1bt/element-wallpaper"
 
 @app.route('/wallpaper/<int:atomic_number>/<int:width>/<int:height>/<string:lang>/')
 def generate_element_image_with_lang(atomic_number, width, height, lang):
     if atomic_number < 1 or atomic_number > 118:
-        return "유효한 원소 번호(1-118)를 입력하세요.", 400
+        return "https://github.com/v1bt/element-wallpaper", 400
     
     if width <= 0 or height <= 0:
-        return "너비와 높이는 양수여야 합니다.", 400
+        return "https://github.com/v1bt/element-wallpaper", 400
     
     if lang not in ['ko', 'en']:
-        return "지원하는 언어는 'ko'(한국어)와 'en'(영어)입니다.", 400
+        return "https://github.com/v1bt/element-wallpaper", 400
     
     element = next((el for el in elements_data if el['atomicNumber'] == atomic_number), None)
     if not element:
-        return f"원소 번호 {atomic_number}에 대한 데이터를 찾을 수 없습니다.", 404
+        return "https://github.com/v1bt/element-wallpaper", 404
     
     img = create_element_image(element, width, height, lang)
     
     img_io = BytesIO()
-    img.save(img_io, 'JPEG')
+    img.save(img_io, 'JPEG', quality=95)
     img_io.seek(0)
     
     return send_file(img_io, mimetype='image/jpeg')
