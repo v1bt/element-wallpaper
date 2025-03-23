@@ -1,7 +1,7 @@
 # 원소 배경화면 생성기
 \[ [English](README.md) | 한국어 \]
 
-일상생활에서 기억할 수 있는 엘리먼트 배경화면 생성기
+일상생활에서 기억할 수 있는 원소 배경화면 생성기
 
 ## 실행하기
 이 repo를 복사하여 실행하셔도 됩니다.
@@ -10,7 +10,7 @@ import requests
 import os
 
 url = "https://dongju.molra.com/" # Or http://127.0.0.1:5500
-num = "1" # hydrogen
+num = "1" # 수소
 
 width = 1179
 height = 2556
